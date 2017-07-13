@@ -1,6 +1,4 @@
-## Introduction
-
-
+# Let Rails and Angular do a great job!
 
 ## What we are going to do?
 
