@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LMarkdownEditorModule } from 'ngx-markdown-editor';
 
 import { AppComponent } from './app.component';
 import { ArticlesComponent } from './articles/articles.component';
@@ -11,6 +12,13 @@ import { ClientComponent } from './client/client.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
+import { RailsComponent } from './rails/rails.component';
+import { AndroidsComponent } from './androids/androids.component';
+import { AngularsComponent } from './angulars/angulars.component';
+import { ContentListComponent } from './content-list/content-list.component';
+import {FormsModule} from "@angular/forms";
+import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +29,20 @@ import { ContentComponent } from './content/content.component';
     ClientComponent,
     HeaderComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    RailsComponent,
+    AndroidsComponent,
+    AngularsComponent,
+    ContentListComponent,
+    MarkdownEditorComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    FormsModule,
+    LMarkdownEditorModule,
+    RouterModule.forRoot(routes),
+    RouterModule.forChild(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

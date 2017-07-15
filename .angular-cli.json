@@ -23,7 +23,10 @@
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/semantic-ui/dist/semantic.js"
+        "../node_modules/semantic-ui/dist/semantic.js",
+        "../node_modules/marked/lib/marked.js",
+        "./vendor/ace.js",
+        "./vendor/highlight.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
