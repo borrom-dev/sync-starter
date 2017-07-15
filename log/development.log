@@ -564,3 +564,118 @@ Processing by Api::V1::ArticlesController#index as HTML
 Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for ::1 at 2017-07-14 22:18:21 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/borrom/Documents/Web/sync-starter/app/views"
+  * "/Users/borrom/Documents/Web/sync-starter"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2017-07-14 22:18:27 +0700
+Processing by ApplicationController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/borrom/Documents/Web/sync-starter/app/views"
+  * "/Users/borrom/Documents/Web/sync-starter"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:3:in `index'
+Started GET "/favicon.ico" for ::1 at 2017-07-14 22:18:28 +0700
+Processing by ApplicationController#index as 
+  Parameters: {"any"=>"favicon"}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/borrom/Documents/Web/sync-starter/app/views"
+  * "/Users/borrom/Documents/Web/sync-starter"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2017-07-14 22:25:36 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/borrom/Documents/Web/sync-starter/app/views"
+  * "/Users/borrom/Documents/Web/sync-starter"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:3:in `index'
+Started GET "/assets/images/logo.png" for ::1 at 2017-07-14 22:33:02 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as PNG
+  Parameters: {"any"=>"assets/images/logo"}
+  Rendering public/index.html
+  Rendered public/index.html (2.6ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/images/logo.png" for ::1 at 2017-07-14 22:34:08 +0700
+Processing by ApplicationController#index as PNG
+  Parameters: {"any"=>"assets/images/logo"}
+  Rendering public/index.html
+  Rendered public/index.html (0.4ms)
+Completed 200 OK in 7ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/images/logo.png" for ::1 at 2017-07-14 22:34:36 +0700
+Processing by ApplicationController#index as PNG
+  Parameters: {"any"=>"assets/images/logo"}
+  Rendering public/index.html
+  Rendered public/index.html (0.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/images/logo.png" for ::1 at 2017-07-14 22:35:26 +0700
+Processing by ApplicationController#index as PNG
+  Parameters: {"any"=>"assets/images/logo"}
+  Rendering public/index.html
+  Rendered public/index.html (0.4ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 07:43:27 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/borrom/Documents/Web/sync-starter/app/views"
+  * "/Users/borrom/Documents/Web/sync-starter"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2017-07-15 07:43:30 +0700
+Processing by ApplicationController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template public/index.html with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/borrom/Documents/Web/sync-starter/app/views"
+  * "/Users/borrom/Documents/Web/sync-starter"
+  * "/"
+):
+  
+app/controllers/application_controller.rb:3:in `index'
