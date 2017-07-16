@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admin/admin.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ui fixed menu\">\n  <div class=\"ui container\">\n    <a href=\"#\" class=\"header item\">\n      <img class=\"logo\" src=\"https://semantic-ui.com/examples/assets/images/logo.png\">\n      Sync Starter\n    </a>\n    <a href=\"#\" class=\"item\">Android</a>\n    <a href=\"#\" class=\"item\">Rails</a>\n    <a href=\"#\" class=\"item\">Angular</a>\n  </div>\n</div>\n<div class=\"admin-main\">\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<div class=\"ui fixed menu\">\n  <div class=\"ui container\">\n    <a href=\"/admin\" class=\"header item\">\n      <img class=\"logo\" src=\"https://semantic-ui.com/examples/assets/images/logo.png\">\n      Sync Starter\n    </a>\n    <a routerLink=\"article\" class=\"item\">Articles</a>\n  </div>\n</div>\n<div class=\"admin-main\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -843,7 +843,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".editor-container {\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n}\n.ace-editor {\n  height: 100%;\n}\n", ""]);
+exports.push([module.i, ".editor-container {\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n}\n\n.ace-editor {\n  height: 100%;\n}\n\n", ""]);
 
 // exports
 
@@ -856,7 +856,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/markdown-editor/markdown-editor.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"ui header container\" style=\"margin-top: 30px\">\n  <i class=\"write icon\"></i>\n  <div class=\"content\">\n    Articles\n  </div>\n</h2>\n<div class=\"ui divider container\"></div>\n<div class=\"ui container\">\n  <div class=\"ui container\">\n    <div class=\"ui top attached tabular menu\">\n      <a class=\"item active\" data-tab=\"first\">Body</a>\n      <a class=\"item\" data-tab=\"second\">Preview</a>\n    </div>\n    <div class=\"ui bottom attached tab segment active\" data-tab=\"first\">\n      <div class=\"ui small basic buttons container\">\n        <button class=\"ui button\"><i class=\"bold icon\"></i></button>\n        <button class=\"ui button\"><i class=\"italic icon\"></i></button>\n        <button class=\"ui button\"><i class=\"header icon\"></i></button>\n        <button class=\"ui button\"><i class=\"quote left icon\"></i></button>\n        <button class=\"ui button\"><i class=\"list icon\"></i></button>\n        <button class=\"ui button\"><i class=\"ordered list icon\"></i></button>\n        <button class=\"ui button\"><i class=\"linkify icon\"></i></button>\n        <button class=\"ui button\"><i class=\"image icon\"></i></button>\n        <div class=\"editor-container\">\n          <div class=\"editor-panel text container\" style=\"height: 400px;\">\n            <div class=\"ace-editor\" #editor></div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"ui bottom attached tab segment\" #preview data-tab=\"second\"></div>\n  </div>\n  <br>\n  <form class=\"ui form\">\n    <div class=\"field\">\n      <label>Title</label>\n      <input type=\"text\" name=\"first-name\" placeholder=\"Title\">\n    </div>\n    <button class=\"ui button primary\" type=\"submit\">Save Change</button>\n    <button class=\"ui button teal\" type=\"submit\">Cancel</button>\n  </form>\n</div>\n"
+module.exports = "<h2 class=\"ui header container\" style=\"margin-top: 30px\">\n  <div class=\"content\">\n    Article\n  </div>\n</h2>\n<div class=\"ui divider container\"></div>\n<div class=\"ui container\">\n  <div class=\"ui container\">\n    <div class=\"ui top attached tabular menu\">\n      <a class=\"item active\" data-tab=\"first\">Body</a>\n      <a class=\"item\" data-tab=\"second\">Preview</a>\n    </div>\n    <div class=\"ui bottom attached tab segment active\" data-tab=\"first\">\n      <div class=\"ui small basic buttons container\">\n        <button class=\"ui button\" (click)=\"insertContent('Bold')\"><i class=\"bold icon\"></i></button>\n        <button class=\"ui button\" (click)=\"insertContent('Italic')\"><i class=\"italic icon\"></i></button>\n        <button class=\"ui button\" (click)=\"insertContent('Heading')\"><i class=\"header icon\"></i></button>\n        <button class=\"ui button\" (click)=\"insertContent('Quote')\"><i class=\"quote left icon\"></i></button>\n        <button class=\"ui button\" (click)=\"insertContent('Ul')\"><i class=\"list icon\"></i></button>\n        <button class=\"ui button\" (click)=\"insertContent('OL')\"><i class=\"ordered list icon\"></i></button>\n        <button class=\"ui button\" (click)=\"insertContent('Link')\"><i class=\"linkify icon\"></i></button>\n        <button class=\"ui button\" (click)=\"insertContent('Code')\"><i class=\"code icon\"></i></button>\n        <button class=\"ui button\" (click)=\"insertContent('Image')\"><i class=\"image icon\"></i></button>\n        <div class=\"editor-container\">\n          <div class=\"editor-panel text container\" style=\"height: 400px;\">\n            <div class=\"ace-editor\" #editor></div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"ui bottom attached tab segment\" [innerHtml]=\"htmlPreview\" data-tab=\"second\"></div>\n  </div>\n  <br>\n  <form class=\"ui form\">\n    <div class=\"field\">\n      <label for=\"title\">Title</label>\n      <input type=\"text\" id=\"title\" name=\"first-name\" placeholder=\"Title\">\n    </div>\n    <div class=\"field\">\n      <label for=\"parent\">Parent</label>\n      <div class=\"ui selection dropdown\">\n        <input type=\"hidden\" name=\"gender\" id=\"parent\">\n        <i class=\"dropdown icon\"></i>\n        <div class=\"default text\">Parent</div>\n        <div class=\"menu\">\n          <div class=\"item\" data-value=\"2\">Android</div>\n          <div class=\"item\" data-value=\"1\">Rails</div>\n          <div class=\"item\" data-value=\"0\">Angular</div>\n        </div>\n      </div>\n    </div>\n    <button class=\"ui button primary\" type=\"submit\">Save Change</button>\n    <button class=\"ui button teal\" type=\"submit\">Cancel</button>\n  </form>\n</div>\n\n"
 
 /***/ }),
 
@@ -865,6 +865,7 @@ module.exports = "<h2 class=\"ui header container\" style=\"margin-top: 30px\">\
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkdownEditorComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -876,28 +877,114 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var MarkdownEditorComponent = (function () {
-    function MarkdownEditorComponent() {
+    function MarkdownEditorComponent(domSanitizer) {
+        this.domSanitizer = domSanitizer;
     }
     MarkdownEditorComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var markedRender = new marked.Renderer();
+        markedRender.code = function (code, language) {
+            var validLang = !!(language && hljs.getLanguage(language));
+            var highlighted = validLang ? hljs.highlight(language, code).value : code;
+            return "<pre style=\"padding: 0; border-radius: 0;\"><code class=\"hljs " + language + "\">" + highlighted + "</code></pre>";
+        };
+        markedRender.table = function (header, body) {
+            return "<table class=\"ui celled table\">\n<thead>\n" + header + "</thead>\n<tbody>\n" + body + "</tbody>\n</table>\n";
+        };
+        this._markedOpt = {
+            renderer: markedRender,
+            highlight: function (code) { return hljs.highlightAuto(code).value; }
+        };
         var editor = this.aceEditorContainer.nativeElement;
         this.editor = ace.edit(editor);
         this.editor.$blockScrolling = Infinity;
-        this.editor.getSession().setUseWrapMode(true);
+        this.editor.setTheme("ace/theme/tomorrow");
+        this.editor.session.setMode("ace/mode/html");
         this.editor.getSession().setValue(this.markdownValue);
+        this.editor.on("change", function (e) {
+            _this.markdownValue = _this.editor.getValue();
+        });
         this.loadJquery();
-    };
-    MarkdownEditorComponent.prototype.loadJquery = function () {
-        $('.menu .item').tab();
-        $('.selection').dropdown();
     };
     Object.defineProperty(MarkdownEditorComponent.prototype, "markdownValue", {
         get: function () {
             return this._markdownValue || '';
         },
+        set: function (value) {
+            var _this = this;
+            this._markdownValue = value;
+            if (value !== null && value !== undefined) {
+                if (this._renderMarkTimeout)
+                    clearTimeout(this._renderMarkTimeout);
+                this._renderMarkTimeout = setTimeout(function () {
+                    var html = marked(_this._markdownValue || '', _this._markedOpt);
+                    _this.htmlPreview = _this.domSanitizer.bypassSecurityTrustHtml(html);
+                }, 100);
+            }
+        },
         enumerable: true,
         configurable: true
     });
+    MarkdownEditorComponent.prototype.loadJquery = function () {
+        $('.menu .item').tab();
+        $('.selection').dropdown();
+    };
+    MarkdownEditorComponent.prototype.insertContent = function (type) {
+        if (!this.editor)
+            return;
+        var selectedText = this.editor.getSelectedText();
+        var isSeleted = !!selectedText;
+        var startSize = 2;
+        var initText = '';
+        var range = this.editor.selection.getRange();
+        switch (type) {
+            case 'Bold':
+                initText = 'Bold Text';
+                selectedText = "**" + (selectedText || initText) + "**";
+                break;
+            case 'Italic':
+                initText = 'Italic Text';
+                selectedText = "*" + (selectedText || initText) + "*";
+                startSize = 1;
+                break;
+            case 'Heading':
+                initText = 'Heading';
+                selectedText = "# " + (selectedText || initText);
+                break;
+            case 'Quote':
+                initText = 'Quote';
+                selectedText = "> " + (selectedText || initText);
+                break;
+            case 'Link':
+                selectedText = "[](http://)";
+                startSize = 1;
+                break;
+            case 'Image':
+                selectedText = "![](http://)";
+                break;
+            case 'Ul':
+                selectedText = "- " + (selectedText || initText);
+                break;
+            case 'Ol':
+                selectedText = "1. " + (selectedText || initText);
+                startSize = 3;
+                break;
+            case 'Code':
+                initText = 'Source Code';
+                selectedText = "```language\r\n" + (selectedText || initText) + "\r\n```";
+                startSize = 3;
+                break;
+        }
+        this.editor.session.replace(range, selectedText);
+        if (!isSeleted) {
+            range.start.column += startSize;
+            range.end.column = range.start.column + initText.length;
+            this.editor.selection.setRange(range);
+        }
+        this.editor.focus();
+    };
     return MarkdownEditorComponent;
 }());
 __decorate([
@@ -909,9 +996,11 @@ MarkdownEditorComponent = __decorate([
         selector: 'app-markdown-editor',
         template: __webpack_require__("../../../../../src/app/markdown-editor/markdown-editor.component.html"),
         styles: [__webpack_require__("../../../../../src/app/markdown-editor/markdown-editor.component.css")]
-    })
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _a || Object])
 ], MarkdownEditorComponent);
 
+var _a;
 //# sourceMappingURL=markdown-editor.component.js.map
 
 /***/ }),

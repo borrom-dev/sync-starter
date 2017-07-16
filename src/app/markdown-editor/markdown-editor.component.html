@@ -1,7 +1,6 @@
 <h2 class="ui header container" style="margin-top: 30px">
-  <i class="write icon"></i>
   <div class="content">
-    Articles
+    Article
   </div>
 </h2>
 <div class="ui divider container"></div>
@@ -13,14 +12,15 @@
     </div>
     <div class="ui bottom attached tab segment active" data-tab="first">
       <div class="ui small basic buttons container">
-        <button class="ui button"><i class="bold icon"></i></button>
-        <button class="ui button"><i class="italic icon"></i></button>
-        <button class="ui button"><i class="header icon"></i></button>
-        <button class="ui button"><i class="quote left icon"></i></button>
-        <button class="ui button"><i class="list icon"></i></button>
-        <button class="ui button"><i class="ordered list icon"></i></button>
-        <button class="ui button"><i class="linkify icon"></i></button>
-        <button class="ui button"><i class="image icon"></i></button>
+        <button class="ui button" (click)="insertContent('Bold')"><i class="bold icon"></i></button>
+        <button class="ui button" (click)="insertContent('Italic')"><i class="italic icon"></i></button>
+        <button class="ui button" (click)="insertContent('Heading')"><i class="header icon"></i></button>
+        <button class="ui button" (click)="insertContent('Quote')"><i class="quote left icon"></i></button>
+        <button class="ui button" (click)="insertContent('Ul')"><i class="list icon"></i></button>
+        <button class="ui button" (click)="insertContent('OL')"><i class="ordered list icon"></i></button>
+        <button class="ui button" (click)="insertContent('Link')"><i class="linkify icon"></i></button>
+        <button class="ui button" (click)="insertContent('Code')"><i class="code icon"></i></button>
+        <button class="ui button" (click)="insertContent('Image')"><i class="image icon"></i></button>
         <div class="editor-container">
           <div class="editor-panel text container" style="height: 400px;">
             <div class="ace-editor" #editor></div>
@@ -28,15 +28,29 @@
         </div>
       </div>
     </div>
-    <div class="ui bottom attached tab segment" #preview data-tab="second"></div>
+    <div class="ui bottom attached tab segment" [innerHtml]="htmlPreview" data-tab="second"></div>
   </div>
   <br>
   <form class="ui form">
     <div class="field">
-      <label>Title</label>
-      <input type="text" name="first-name" placeholder="Title">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="first-name" placeholder="Title">
+    </div>
+    <div class="field">
+      <label for="parent">Parent</label>
+      <div class="ui selection dropdown">
+        <input type="hidden" name="gender" id="parent">
+        <i class="dropdown icon"></i>
+        <div class="default text">Parent</div>
+        <div class="menu">
+          <div class="item" data-value="2">Android</div>
+          <div class="item" data-value="1">Rails</div>
+          <div class="item" data-value="0">Angular</div>
+        </div>
+      </div>
     </div>
     <button class="ui button primary" type="submit">Save Change</button>
     <button class="ui button teal" type="submit">Cancel</button>
   </form>
 </div>
+

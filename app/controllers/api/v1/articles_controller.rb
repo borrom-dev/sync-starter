@@ -39,4 +39,5 @@ class Api::V1::ArticlesController < Api::RestController
     def article_params
       params.require(:article).permit(:title, :body, :published)
     end
+
 end
