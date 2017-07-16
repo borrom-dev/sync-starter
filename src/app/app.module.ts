@@ -19,6 +19,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import {FormsModule} from "@angular/forms";
 import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MarkdownPreviewComponent } from './markdown-preview/markdown-preview.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AngularsComponent,
     ContentListComponent,
     MarkdownEditorComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MarkdownPreviewComponent
   ],
   imports: [
     BrowserModule,

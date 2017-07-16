@@ -21,7 +21,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".ui.menu .item img.logo {\n  margin-right: 1.5em;\n}\n\n.main.container {\n  margin-top: 7em;\n}\n\n.wireframe {\n  margin-top: 2em;\n}\n\n.ui.footer.segment {\n  margin: 5em 0em 0em;\n  padding: 5em 0em;\n}\n\n.admin-main {\n  margin-top: 100px;\n}\n", ""]);
 
 // exports
 
@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admin/admin.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  admin works!\n</p>\n"
+module.exports = "<div class=\"ui fixed menu\">\n  <div class=\"ui container\">\n    <a href=\"#\" class=\"header item\">\n      <img class=\"logo\" src=\"https://semantic-ui.com/examples/assets/images/logo.png\">\n      Sync Starter\n    </a>\n    <a href=\"#\" class=\"item\">Android</a>\n    <a href=\"#\" class=\"item\">Rails</a>\n    <a href=\"#\" class=\"item\">Angular</a>\n  </div>\n</div>\n<div class=\"admin-main\">\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -95,7 +95,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/androids/androids.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  androids works!\n</p>\n"
+module.exports = "<pre><code class=\"nohighlight\">hello</code></pre>\n"
 
 /***/ }),
 
@@ -276,6 +276,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__markdown_editor_markdown_editor_component__ = __webpack_require__("../../../../../src/app/markdown-editor/markdown-editor.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__not_found_not_found_component__ = __webpack_require__("../../../../../src/app/not-found/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__markdown_preview_markdown_preview_component__ = __webpack_require__("../../../../../src/app/markdown-preview/markdown-preview.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -283,6 +284,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -324,7 +326,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_15__angulars_angulars_component__["a" /* AngularsComponent */],
             __WEBPACK_IMPORTED_MODULE_16__content_list_content_list_component__["a" /* ContentListComponent */],
             __WEBPACK_IMPORTED_MODULE_18__markdown_editor_markdown_editor_component__["a" /* MarkdownEditorComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__not_found_not_found_component__["a" /* NotFoundComponent */]
+            __WEBPACK_IMPORTED_MODULE_19__not_found_not_found_component__["a" /* NotFoundComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__markdown_preview_markdown_preview_component__["a" /* MarkdownPreviewComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -352,7 +355,9 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__androids_androids_component__ = __webpack_require__("../../../../../src/app/androids/androids.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angulars_angulars_component__ = __webpack_require__("../../../../../src/app/angulars/angulars.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__not_found_not_found_component__ = __webpack_require__("../../../../../src/app/not-found/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__articles_articles_component__ = __webpack_require__("../../../../../src/app/articles/articles.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
+
 
 
 
@@ -362,7 +367,13 @@ AppModule = __decorate([
 var routes = [
     {
         path: 'admin',
-        component: __WEBPACK_IMPORTED_MODULE_0__admin_admin_component__["a" /* AdminComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_0__admin_admin_component__["a" /* AdminComponent */],
+        children: [
+            {
+                path: 'article',
+                component: __WEBPACK_IMPORTED_MODULE_6__articles_articles_component__["a" /* ArticlesComponent */]
+            }
+        ]
     },
     {
         path: '',
@@ -412,7 +423,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/articles/articles.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  articles works!\n</p>\n"
+module.exports = "<app-markdown-editor></app-markdown-editor>\n"
 
 /***/ }),
 
@@ -534,7 +545,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/client/client.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n<router-outlet></router-outlet>\n<app-footer></app-footer>\n"
+module.exports = "<app-header></app-header>\n<div class=\"ui text container\">\n  <router-outlet></router-outlet>\n</div>\n<app-footer></app-footer>\n"
 
 /***/ }),
 
@@ -656,7 +667,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/content.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ui text container\">\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <div class=\"overlay\">\n    <div class=\"ui labeled icon vertical menu\">\n      <a class=\"item\"><i class=\"twitter icon\"></i> Tweet</a>\n      <a class=\"item\"><i class=\"facebook icon\"></i> Share</a>\n      <a class=\"item\"><i class=\"mail icon\"></i> E-mail</a>\n    </div>\n  </div>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <img class=\"ui medium left floated image\" src=\"https://semantic-ui.com/examples/assets/images/wireframe/square-image.png\">\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo.\n    <img class=\"ui medium right floated image\" src=\"https://semantic-ui.com/examples/assets/images/wireframe/square-image.png\">\n    Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare\n    sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus\n    enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus,\n    tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,\n    accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <img class=\"ui medium left floated image\" src=\"https://semantic-ui.com/examples/assets/images/wireframe/square-image.png\">\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo.\n    <img class=\"ui medium right floated image\" src=\"https://semantic-ui.com/examples/assets/images/wireframe/square-image.png\">\n    Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare\n    sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus\n    enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus,\n    tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,\n    accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n</div>\n"
+module.exports = "<div class=\"ui text container\">\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <div class=\"overlay\">\n    <div class=\"ui labeled icon vertical menu\">\n      <a class=\"item\"><i class=\"twitter icon\"></i> Tweet</a>\n      <a class=\"item\"><i class=\"facebook icon\"></i> Share</a>\n      <a class=\"item\"><i class=\"mail icon\"></i> E-mail</a>\n    </div>\n  </div>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <img class=\"ui medium left floated image\" src=\"https://semantic-ui.com/examples/assets/images/wireframe/square-image.png\">\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo.\n    <img class=\"ui medium right floated image\" src=\"https://semantic-ui.com/examples/assets/images/wireframe/square-image.png\">\n    Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare\n    sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus\n    enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus,\n    tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,\n    accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <img class=\"ui medium left floated image\" src=\"https://semantic-ui.com/examples/assets/images/wireframe/square-image.png\">\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo.\n    <img class=\"ui medium right floated image\" src=\"https://semantic-ui.com/examples/assets/images/wireframe/square-image.png\">\n    Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare\n    sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus\n    enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus,\n    tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,\n    accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n    quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.\n    Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt\n    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.\n    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.\n    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>\n</div>\n\n<div class=\"ui text container\" [innerHtml]=\"content\"></div>\n\n"
 
 /***/ }),
 
@@ -665,6 +676,7 @@ module.exports = "<div class=\"ui text container\">\n  <p>Pellentesque habitant 
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContentComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -676,10 +688,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ContentComponent = (function () {
-    function ContentComponent() {
+    function ContentComponent(_domSanitizer) {
+        this._domSanitizer = _domSanitizer;
     }
     ContentComponent.prototype.ngOnInit = function () {
+        var html = marked('# I am using __markdown__.');
+        this.content = this._domSanitizer.bypassSecurityTrustHtml(html);
     };
     return ContentComponent;
 }());
@@ -689,9 +705,10 @@ ContentComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/content/content.component.html"),
         styles: [__webpack_require__("../../../../../src/app/content/content.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _a || Object])
 ], ContentComponent);
 
+var _a;
 //# sourceMappingURL=content.component.js.map
 
 /***/ }),
@@ -826,7 +843,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".editor-container {\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n}\n.ace-editor {\n  height: 100%;\n}\n", ""]);
 
 // exports
 
@@ -839,7 +856,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/markdown-editor/markdown-editor.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  markdown-editor works!\n</p>\n"
+module.exports = "<h2 class=\"ui header container\" style=\"margin-top: 30px\">\n  <i class=\"write icon\"></i>\n  <div class=\"content\">\n    Articles\n  </div>\n</h2>\n<div class=\"ui divider container\"></div>\n<div class=\"ui container\">\n  <div class=\"ui container\">\n    <div class=\"ui top attached tabular menu\">\n      <a class=\"item active\" data-tab=\"first\">Body</a>\n      <a class=\"item\" data-tab=\"second\">Preview</a>\n    </div>\n    <div class=\"ui bottom attached tab segment active\" data-tab=\"first\">\n      <div class=\"ui small basic buttons container\">\n        <button class=\"ui button\"><i class=\"bold icon\"></i></button>\n        <button class=\"ui button\"><i class=\"italic icon\"></i></button>\n        <button class=\"ui button\"><i class=\"header icon\"></i></button>\n        <button class=\"ui button\"><i class=\"quote left icon\"></i></button>\n        <button class=\"ui button\"><i class=\"list icon\"></i></button>\n        <button class=\"ui button\"><i class=\"ordered list icon\"></i></button>\n        <button class=\"ui button\"><i class=\"linkify icon\"></i></button>\n        <button class=\"ui button\"><i class=\"image icon\"></i></button>\n        <div class=\"editor-container\">\n          <div class=\"editor-panel text container\" style=\"height: 400px;\">\n            <div class=\"ace-editor\" #editor></div>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"ui bottom attached tab segment\" #preview data-tab=\"second\"></div>\n  </div>\n  <br>\n  <form class=\"ui form\">\n    <div class=\"field\">\n      <label>Title</label>\n      <input type=\"text\" name=\"first-name\" placeholder=\"Title\">\n    </div>\n    <button class=\"ui button primary\" type=\"submit\">Save Change</button>\n    <button class=\"ui button teal\" type=\"submit\">Cancel</button>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -848,7 +865,6 @@ module.exports = "<p>\n  markdown-editor works!\n</p>\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkdownEditorComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -859,247 +875,105 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
 
 var MarkdownEditorComponent = (function () {
-    function MarkdownEditorComponent(required, maxlength, _renderer, _domSanitizer) {
-        if (required === void 0) { required = false; }
-        if (maxlength === void 0) { maxlength = -1; }
-        this.required = required;
-        this.maxlength = maxlength;
-        this._renderer = _renderer;
-        this._domSanitizer = _domSanitizer;
-        this.hideToolbar = false;
-        this.height = "300px";
-        this._hideIcons = {};
-        this.showPreviewPanel = true;
-        this.isFullScreen = false;
-        this._onChange = function (_) { };
-        this._onTouched = function () { };
+    function MarkdownEditorComponent() {
     }
-    Object.defineProperty(MarkdownEditorComponent.prototype, "mode", {
-        get: function () {
-            return this._mode || 'editor';
-        },
-        set: function (value) {
-            if (!value || (value.toLowerCase() !== 'editor' && value.toLowerCase() !== 'preview')) {
-                value = 'editor';
-            }
-            this._mode = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MarkdownEditorComponent.prototype, "options", {
-        get: function () {
-            return this._options;
-        },
-        set: function (value) {
-            var _this = this;
-            this._options = value || {
-                showBorder: true,
-                hideIcons: []
-            };
-            this._hideIcons = {};
-            (this._options.hideIcons || []).forEach(function (v) {
-                _this._hideIcons[v] = true;
-            });
-        },
-        enumerable: true,
-        configurable: true
-    });
+    MarkdownEditorComponent.prototype.ngOnInit = function () {
+        var editor = this.aceEditorContainer.nativeElement;
+        this.editor = ace.edit(editor);
+        this.editor.$blockScrolling = Infinity;
+        this.editor.getSession().setUseWrapMode(true);
+        this.editor.getSession().setValue(this.markdownValue);
+        this.loadJquery();
+    };
+    MarkdownEditorComponent.prototype.loadJquery = function () {
+        $('.menu .item').tab();
+        $('.selection').dropdown();
+    };
     Object.defineProperty(MarkdownEditorComponent.prototype, "markdownValue", {
         get: function () {
             return this._markdownValue || '';
         },
-        set: function (value) {
-            var _this = this;
-            this._markdownValue = value;
-            this._onChange(value);
-            if (value !== null && value !== undefined) {
-                if (this._renderMarkTimeout)
-                    clearTimeout(this._renderMarkTimeout);
-                this._renderMarkTimeout = setTimeout(function () {
-                    var html = marked(_this._markdownValue || '', _this._markedOpt);
-                    _this._previewHtml = _this._domSanitizer.bypassSecurityTrustHtml(html);
-                }, 100);
-            }
-        },
         enumerable: true,
         configurable: true
     });
-    MarkdownEditorComponent.prototype.ngOnInit = function () {
-        var _markedRender = new marked.Renderer();
-        _markedRender.code = function (code, language) {
-            var validLang = !!(language && hljs.getLanguage(language));
-            var highlighted = validLang ? hljs.highlight(language, code).value : code;
-            return "<pre style=\"padding: 0; border-radius: 0;\"><code class=\"hljs " + language + "\">" + highlighted + "</code></pre>";
-        };
-        _markedRender.table = function (header, body) {
-            return "<table class=\"table table-bordered\">\n<thead>\n" + header + "</thead>\n<tbody>\n" + body + "</tbody>\n</table>\n";
-        };
-        this._markedOpt = {
-            renderer: _markedRender,
-            highlight: function (code) { return hljs.highlightAuto(code).value; }
-        };
-    };
-    MarkdownEditorComponent.prototype.ngAfterViewInit = function () {
-        var _this = this;
-        var editorElement = this.aceEditorContainer.nativeElement;
-        this.editor = ace.edit(editorElement);
-        this.editor.$blockScrolling = Infinity;
-        this.editor.getSession().setUseWrapMode(true);
-        this.editor.getSession().setMode('ace/model/javascript');
-        this.editor.getSession().setValue(this.markdownValue);
-        this.editor.on("change", function (e) {
-            var val = _this.editor.getValue();
-            _this.markdownValue = val;
-        });
-    };
-    MarkdownEditorComponent.prototype.ngOnDestroy = function () {
-    };
-    MarkdownEditorComponent.prototype.writeValue = function (value) {
-        var _this = this;
-        setTimeout(function () {
-            _this.markdownValue = value;
-            if (value && _this.editor) {
-                _this.editor.getSession().setValue(value);
-            }
-        }, 1);
-    };
-    MarkdownEditorComponent.prototype.registerOnChange = function (fn) {
-        this._onChange = fn;
-    };
-    MarkdownEditorComponent.prototype.registerOnTouched = function (fn) {
-        this._onTouched = fn;
-    };
-    MarkdownEditorComponent.prototype.validate = function (c) {
-        var result = null;
-        if (this.required && this.markdownValue.length === 0) {
-            result = { required: true };
-        }
-        if (this.maxlength > 0 && this.markdownValue.length > this.maxlength) {
-            result = { maxlength: true };
-        }
-        return result;
-    };
-    MarkdownEditorComponent.prototype.insertContent = function (type) {
-        if (!this.editor)
-            return;
-        var selectedText = this.editor.getSelectedText();
-        var isSeleted = !!selectedText;
-        var startSize = 2;
-        var initText = '';
-        var range = this.editor.selection.getRange();
-        switch (type) {
-            case 'Bold':
-                initText = 'Bold Text';
-                selectedText = "**" + (selectedText || initText) + "**";
-                break;
-            case 'Italic':
-                initText = 'Italic Text';
-                selectedText = "*" + (selectedText || initText) + "*";
-                startSize = 1;
-                break;
-            case 'Heading':
-                initText = 'Heading';
-                selectedText = "# " + (selectedText || initText);
-                break;
-            case 'Refrence':
-                initText = 'Refrence';
-                selectedText = "> " + (selectedText || initText);
-                break;
-            case 'Link':
-                selectedText = "[](http://)";
-                startSize = 1;
-                break;
-            case 'Image':
-                selectedText = "![](http://)";
-                break;
-            case 'Ul':
-                selectedText = "- " + (selectedText || initText);
-                break;
-            case 'Ol':
-                selectedText = "1. " + (selectedText || initText);
-                startSize = 3;
-                break;
-            case 'Code':
-                initText = 'Source Code';
-                selectedText = "```language\r\n" + (selectedText || initText) + "\r\n```";
-                startSize = 3;
-                break;
-        }
-        this.editor.session.replace(range, selectedText);
-        if (!isSeleted) {
-            range.start.column += startSize;
-            range.end.column = range.start.column + initText.length;
-            this.editor.selection.setRange(range);
-        }
-        this.editor.focus();
-    };
-    MarkdownEditorComponent.prototype.togglePreview = function () {
-        this.showPreviewPanel = !this.showPreviewPanel;
-        this.editorResize();
-    };
-    MarkdownEditorComponent.prototype.previewPanelClick = function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-    };
-    MarkdownEditorComponent.prototype.fullScreen = function () {
-        this.isFullScreen = !this.isFullScreen;
-        this._renderer.setStyle(document.body, 'overflowY', this.isFullScreen ? 'hidden' : 'auto');
-        this.editorResize();
-    };
-    MarkdownEditorComponent.prototype.editorResize = function (timeOut) {
-        var _this = this;
-        if (timeOut === void 0) { timeOut = 100; }
-        if (this.editor) {
-            setTimeout(function () {
-                _this.editor.resize();
-                _this.editor.focus();
-            }, timeOut);
-        }
-    };
     return MarkdownEditorComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewChild */])('aceEditor'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewChild */])('editor'),
     __metadata("design:type", Object)
 ], MarkdownEditorComponent.prototype, "aceEditorContainer", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Input */])(),
-    __metadata("design:type", Boolean)
-], MarkdownEditorComponent.prototype, "hideToolbar", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Input */])(),
-    __metadata("design:type", String)
-], MarkdownEditorComponent.prototype, "height", void 0);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Input */])(),
-    __metadata("design:type", String),
-    __metadata("design:paramtypes", [String])
-], MarkdownEditorComponent.prototype, "mode", null);
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Input */])(),
-    __metadata("design:type", Object),
-    __metadata("design:paramtypes", [Object])
-], MarkdownEditorComponent.prototype, "options", null);
 MarkdownEditorComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-markdown-editor',
         template: __webpack_require__("../../../../../src/app/markdown-editor/markdown-editor.component.html"),
         styles: [__webpack_require__("../../../../../src/app/markdown-editor/markdown-editor.component.css")]
-    }),
-    __param(0, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* Attribute */])('required')),
-    __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* Attribute */])('maxlength')),
-    __metadata("design:paramtypes", [Boolean, Number, typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Renderer2 */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Renderer2 */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _b || Object])
+    })
 ], MarkdownEditorComponent);
 
-var _a, _b;
 //# sourceMappingURL=markdown-editor.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdown-preview/markdown-preview.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdown-preview/markdown-preview.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  markdown-preview works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/markdown-preview/markdown-preview.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkdownPreviewComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MarkdownPreviewComponent = (function () {
+    function MarkdownPreviewComponent() {
+    }
+    MarkdownPreviewComponent.prototype.ngOnInit = function () {
+    };
+    return MarkdownPreviewComponent;
+}());
+MarkdownPreviewComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
+        selector: 'app-markdown-preview',
+        template: __webpack_require__("../../../../../src/app/markdown-preview/markdown-preview.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/markdown-preview/markdown-preview.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], MarkdownPreviewComponent);
+
+//# sourceMappingURL=markdown-preview.component.js.map
 
 /***/ }),
 

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {DomSanitizer} from "@angular/platform-browser";
+
+declare let marked: any;
 
 @Component({
   selector: 'app-content',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  private content: any;
+
+  constructor(private _domSanitizer: DomSanitizer) { }
 
   ngOnInit() {
+    let html = marked('# I am using __markdown__.');
+    this.content = this._domSanitizer.bypassSecurityTrustHtml(html);
   }
 
 }

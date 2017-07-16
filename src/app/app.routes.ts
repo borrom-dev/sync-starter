@@ -5,10 +5,17 @@ import {RailsComponent} from "./rails/rails.component";
 import {AndroidsComponent} from "./androids/androids.component";
 import {AngularsComponent} from "./angulars/angulars.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
+import {ArticlesComponent} from "./articles/articles.component";
 export const routes: Routes = [
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    children: [
+      {
+        path: 'article',
+        component: ArticlesComponent
+      }
+    ]
   },
   {
     path: '',
